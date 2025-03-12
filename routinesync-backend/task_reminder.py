@@ -17,6 +17,7 @@ class ReminderSystem:
         self.mail_sender = MailSender()
         self.email_body_creator = MessageBodyCreation()
         self.db_client = TursoDatabaseConnect()
+        self.recipient_email=os.getenv("RECIPIENT_EMAIL")
         self.current_dt = pendulum.now(TIMEZONE)
         self.lower_bound = self.current_dt.subtract(minutes=20)
         self.upper_bound = self.current_dt.add(minutes=25)
@@ -46,7 +47,7 @@ class ReminderSystem:
             task["Task"], task["Task_Description"], task["Schedule_Date"]
         )
         return self.mail_sender.sender(
-            "sk0551460@gmail.com", result.subject, result.body
+            self.recipient_email, result.subject, result.body
         )
 
     def process_task(self, task: Dict) -> None:
