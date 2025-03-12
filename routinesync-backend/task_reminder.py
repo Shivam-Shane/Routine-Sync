@@ -23,7 +23,7 @@ class ReminderSystem:
 
     def update_last_sent(self, schedule_date: str, task_id: str) -> bool:
         """Update the Last_Sent timestamp for a task in the database."""
-        query = """UPDATE routinesynctaskdata SET Last_Sent = (?) WHERE id = (?)"""
+        query = """UPDATE routinesynctask_sentdetails SET Last_Sent = (?) WHERE id = (?)"""
         params = (schedule_date, task_id)
         
         try:
@@ -53,7 +53,7 @@ class ReminderSystem:
         """Process a single task based on its recurrence type."""
         schedule_dt = pendulum.parse(task["Schedule_Date"], tz=TIMEZONE)
         last_sent = pendulum.parse(task["Last_Sent"], tz=TIMEZONE)
-        within_time_range = self.lower_bound <= schedule_dt <= self.upper_bound
+        within_time_range = self.lower_bound.time() <= schedule_dt.time() <= self.upper_bound.time()
         
         recurrence_handlers = {
             "daily": self._handle_daily,
@@ -71,6 +71,8 @@ class ReminderSystem:
     def _handle_daily(self, task: Dict, schedule_dt: pendulum.DateTime, 
                      last_sent: pendulum.DateTime, within_time_range: bool) -> None:
         logger.info("Processing daily task...")
+        logger.info(f"Scedule {schedule_dt} --- {last_sent} --- {within_time_range}")
+        logger.info(f"Upper range {self.upper_bound}  lower range {self.lower_bound}")
         if within_time_range and last_sent.date() != self.current_dt.date():
             if self.send_reminder(task):
                 logger.info(f"Reminder sent for daily task: {task['Task']}")
