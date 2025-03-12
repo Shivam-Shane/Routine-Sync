@@ -1,0 +1,4 @@
+routinesyncbackendvirtualenv/
+__pycache__/
+*.sqlite3
+.env

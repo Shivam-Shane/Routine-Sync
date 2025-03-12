@@ -1,0 +1,4 @@
+.vercel
+/routinesyncbackendvirtualenv
+*.sqlite3
+.env

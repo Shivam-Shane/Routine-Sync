@@ -1,0 +1,138 @@
+/* src/styles/Footer.css */
+.footer {
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 15px 10px; /* Reduced from 40px 20px 20px */
+  margin-top: 10px; /* Reduced from 40px */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+  flex-wrap: wrap;
+  gap: 10px; /* Reduced from 20px */
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 120px; /* Reduced from 200px for better scaling */
+}
+/* Routinesync tag */
+.footer-section h3 {   
+  font-size: 1.2rem; /* Reduced from 1.5rem */
+  margin: 0 0 5px 0; /* Tightened from 15px */
+  color: #db5b34;
+}
+/* quick links and contact us */
+.footer-section h4 {
+  font-size: 1rem; /* Reduced from 1.2rem */
+  margin: 0 0 5px 0; /* Tightened from 15px */
+  color: #3498db;
+}
+
+.footer-section p {
+  font-size: 0.85rem; /* Reduced from 1rem */
+  line-height: 1.4; /* Reduced from 1.6 */
+  margin: 2px 0; /* Reduced from 5px */
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  align-items: left;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 4px; /* Reduced from 10px */
+}
+
+.footer-section ul li a {
+  color: #ecf0f1;
+  text-decoration: none;
+  font-size: 0.85rem; /* Reduced from default */
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color:  #db5b34;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 10px auto 0; /* Reduced from 20px */
+  text-align: center;
+  border-top: 1px solid #34495e;
+  padding-top: 5px; /* Reduced from 20px */
+  font-size: 0.8rem; /* Reduced from 0.9rem */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px 8px; /* Further reduced for smaller screens */
+    margin-top: 8px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px; /* Reduced from 15px */
+  }
+
+  .footer-section {
+    min-width: 100%; /* Full width on smaller screens */
+    margin-bottom: 8px; /* Reduced from 20px */
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem; /* Adjusted for smaller screens */
+  }
+
+  .footer-section h4 {
+    font-size: 0.9rem;
+    margin-right: 200px;
+  }
+
+  .footer-section p {
+    font-size: 0.8rem; /* Slightly smaller */
+  }
+  .footer-section ul li a {
+    font-size: 0.8rem; /* Slightly smaller */
+    margin-right: 200px;
+  }
+
+  .footer-bottom {
+    padding-top: 4px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer {
+    padding: 8px 6px; /* Even tighter for very small screens */
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+
+  .footer-section h4 {
+    font-size: 0.85rem;
+  }
+
+  .footer-section p,
+  .footer-section ul li a {
+    font-size: 0.75rem;
+    
+  }
+
+  .footer-bottom {
+    font-size: 0.7rem;
+  }
+}
