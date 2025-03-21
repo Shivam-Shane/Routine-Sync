@@ -44,7 +44,7 @@ class MessageBodyCreation:
         Initialize chat model
         """
         try:
-            self.chat_model = ChatGroq(
+            self.chat_model = ChatGroq(model=os.getenv("LLM_MODEL"),
                 api_key=os.getenv("GROQ_API_KEY"),
                 temperature=0.4
             )
@@ -89,3 +89,5 @@ class MessageBodyCreation:
             logger.error(f"Error in creating mail body: {e}")
             return None
 
+if __name__ == "__main__":
+    email_body_creator = MessageBodyCreation()
