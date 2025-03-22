@@ -84,7 +84,7 @@ class ReminderSystem:
     def _handle_once(self, task: Dict, schedule_dt: pendulum.DateTime, 
                     last_sent: pendulum.DateTime, within_time_range: bool) -> None:
         logger.info("Processing one-time task...")
-        if within_time_range:
+        if within_time_range and (schedule_dt.date()==self.current_dt.date()):
             if self.send_reminder(task):
                 logger.info(f"Reminder sent for one-time task: {task['Task']}")
                 if self.update_last_sent(task["Schedule_Date"], task["id"]):
