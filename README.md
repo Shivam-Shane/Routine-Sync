@@ -83,16 +83,18 @@ RoutineSync is a task management web application built with React that allows us
 - Track cron-job.org execution status
 
 ## License
-This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the LICENSE file for details.
+This project is licensed under the Creative Commons Zero v1.0 Universal - see the LICENSE file for details.
 
 ## Contact
-For any questions or support, please contact the project maintainer at sk0551460@gmail.com
+
+For questions, suggestions, or support, reach out at 
+- **sk0551460@gmail.com** 
+- **shivam.hireme@gmail.com**.
 
 ## Support the Project
-Help us continue developing and improving this project by:
 
-### Following Us on Social Media: 
+Help support continued development and improvements:
 
-Stay updated with our latest work by following us on LinkedIn at [https://www.linkedin.com/in/shivam-hireme/](https://www.linkedin.com/in/shivam-hireme/)
-
-Buying Me a Book: https://buymeacoffee.com/shivamshane
+- **Follow on LinkedIn**: Stay connected for updates – [LinkedIn Profile](https://www.linkedin.com/in/shivam-hireme/)
+- **Buy Me a Coffee**: Appreciate the project? [Buy Me a Coffee](https://buymeacoffee.com/shivamshane)
+- **Visit my Portfolio**: [Shivam's Portfolio](https://shivam-portfoliio.vercel.app/)
